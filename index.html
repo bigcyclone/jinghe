@@ -288,11 +288,11 @@
         $('.m-success').hide();
     }, 3000);
     $(function () {
-        /*
-        var bookTitle = '7彩宝石之旅';
-        var msgContent = '路遇“宝石”？天降幸运？快来跑跑看吧！'; // 微信分享描述
+        
+        var bookTitle = '集七彩徽章 赢五一大奖';
+        var msgContent = '一路向北· 泾彩乐游 这个五一泾河新城让你嗨个够'; // 微信分享描述
         $.ajax({
-            url: '/wechat_share_api/index.php',
+            url: 'https://hgame.lottery.gov.cn/wechat_share_api/index.php',
             type: 'post',
             data: {
                 'url': window.location.href
@@ -309,7 +309,7 @@
                         title: bookTitle, // 分享标题
                         desc: msgContent,
                         link: window.location.href, // 分享链接
-                        imgUrl: "https://hgame.lottery.gov.cn/qcbszl0901/images/share.jpg", // 分享图标
+                        imgUrl: "https://yunqitong-1aced4-1251916211.tcloudbaseapp.com/static/game_run/pic_share.jpg", // 分享图标
                     };
                     wx.onMenuShareAppMessage(shareData);
                     wx.onMenuShareTimeline(shareData);
@@ -317,20 +317,8 @@
                     wx.onMenuShareWeibo(shareData);
                 });
             }
-        });
-        */
-
-        wx.ready(function () {   //需在用户可能点击分享按钮前就先调用
-            wx.updateAppMessageShareData({
-                title: '哎呀我去', // 分享标题
-                desc: '令工nb', // 分享描述
-                link: window.location.href, // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
-                imgUrl: "https://hgame.lottery.gov.cn/qcbszl0901/images/share.jpg", // 分享图标
-                success: function () {
-                    // 设置成功
-                }
-            })
-        });
+        });  
+        
         var w_w = $(window).width();
         var w_h = $(window).height();
         var progress = 0;
