@@ -276,24 +276,7 @@
 <script src="http://yunqitong-1aced4-1251916211.tcloudbaseapp.com/static/game_run/jweixin-1.6.0.js"></script>
 <script src="http://yunqitong-1aced4-1251916211.tcloudbaseapp.com/static/game_run/phaser.3.15.1.min.js"></script>
 <script src="http://yunqitong-1aced4-1251916211.tcloudbaseapp.com/static/game_run/game.js"></script>
-<script src="//imgcache.qq.com/qcloud/cloudbase-js-sdk/1.2.1/cloudbase.js"></script>
-<script>
-    const app = cloudbase.init({
-        env: 'yunqitong-1aced4' // 您的环境id
-    })
-		const auth = app.auth();
-		async function login(){
-		  // 1. 建议登录前先判断当前是否已经登录
-		  const loginState = await auth.getLoginState();
-		  if(!loginState){
-		    // 2. 调用微信登录API
-		    await auth.weixinAuthProvider({
-		      appid: "wx6d38a1298c5d8372", // 微信公众号的Appid
-		      scope: "snsapi_base"
-		    }).signIn();
-		  }
-		}
-		login();
+<script>    
     $('.m-success').show();
     setTimeout(function () {
         $('.m-success').css("opacity","1");
