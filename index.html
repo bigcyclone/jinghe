@@ -281,7 +281,19 @@
     const app = cloudbase.init({
         env: 'yunqitong-1aced4' // 您的环境id
     })
-
+		const auth = app.auth();
+		async function login(){
+		  // 1. 建议登录前先判断当前是否已经登录
+		  const loginState = await auth.getLoginState();
+		  if(!loginState){
+		    // 2. 调用微信登录API
+		    await auth.weixinAuthProvider({
+		      appid: "wx6d38a1298c5d8372", // 微信公众号的Appid
+		      scope: "snsapi_base"
+		    }).signIn();
+		  }
+		}
+		login();
     $('.m-success').show();
     setTimeout(function () {
         $('.m-success').css("opacity","1");
